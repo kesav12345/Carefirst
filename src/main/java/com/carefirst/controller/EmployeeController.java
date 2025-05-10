@@ -42,11 +42,6 @@ public class EmployeeController {
 		return new ResponseEntity<>(list, HttpStatus.OK);
 	}
 
-	@GetMapping("/employeesByHireDateDesc")
-	public ResponseEntity<List<EmployeeDto>> getEmployeesHireDateDesd() {
-		return new ResponseEntity<>(employeeService.getEmployeesHireDateDesd(), HttpStatus.OK);
-	}
-
 	@PostMapping()
 	public ResponseEntity<EmployeeDto> createEmployee(@RequestBody EmployeeDto employeeDTO) throws Exception {		
 		return new ResponseEntity<>(employeeService.createEmployee(employeeDTO), HttpStatus.CREATED);
@@ -55,6 +50,10 @@ public class EmployeeController {
 	@PutMapping("/{id}")
 	public ResponseEntity<EmployeeDto> updateEmployee(@PathVariable Long id, @RequestBody EmployeeDto employee) {
 		return new ResponseEntity<>(employeeService.updateEmployee(id, employee), HttpStatus.OK);
+	}
+	
+	public void deleteEmployee(@PathVariable Long id, @RequestBody EmployeeDto employee) {
+		
 	}
 
 }

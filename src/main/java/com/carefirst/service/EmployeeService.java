@@ -64,9 +64,4 @@ public class EmployeeService {
 			throw new Exception("Invalid Email");
 	}
 
-	public List<EmployeeDto> getEmployeesHireDateDesd() {
-		return employeeRepo.findAll(Sort.by(Sort.Direction.DESC, "HireDate")).stream()
-				.map(employeeMapper::entityToEmployee).collect(Collectors.toList());
-	}
-
 }
