@@ -52,8 +52,4 @@ public class EmployeeController {
 		return new ResponseEntity<>(employeeService.updateEmployee(id, employee), HttpStatus.OK);
 	}
 	
-	public void deleteEmployee(@PathVariable Long id, @RequestBody EmployeeDto employee) {
-		
-	}
-
 }
